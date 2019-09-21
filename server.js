@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-  "mongodb+srv://tod:tg36watr@cluster0-gimnf.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb+srv://playce:PlayceChallenge@cluster0-gimnf.mongodb.net/test?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 requireDir("./src/models");
