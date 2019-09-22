@@ -1,27 +1,27 @@
 const mongoose = require("mongoose");
-const Playce = mongoose.model("Playce");
+const Product = mongoose.model("Product");
 
 module.exports = {
   async index(req, res) {
-    const playce = await Playce.find();
+    const products = await Product.find();
 
     return res.json(products);
   },
 
   async show(req, res) {
-    const playce = await Playce.findById(req.params.id);
+    const product = await Product.findById(req.params.id);
 
     return res.json(product);
   },
 
   async store(req, res) {
-    const playce = await Playce.create(req.body);
+    const product = await Product.create(req.body);
 
     return res.json(product);
   },
 
   async update(req, res) {
-    const playce = await Playce.findByIdAndUpdate(req.params.id, req.body, {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
       new: true
     });
 
@@ -29,7 +29,7 @@ module.exports = {
   },
 
   async destroy(req, res) {
-    await playce.findByIdAndRemove(req.params.id);
+    await Product.findByIdAndRemove(req.params.id);
 
     return res.send();
   }
